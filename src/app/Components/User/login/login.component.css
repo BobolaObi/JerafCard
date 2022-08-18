@@ -1,0 +1,58 @@
+html {
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+padding: 8% 0;
+}
+h1{
+  font-weight: bolder;
+}
+/*Button / Link Styles*/
+[type="button"] {
+  font-weight: normal;
+  color: white;
+  border:0px;
+  text-decoration: none;
+  background: #000000;
+  border-radius: 11px;
+  font-size: larger;
+}
+
+input{
+  width: 23rem;
+  height: 70px;
+  border: 2px solid rgba(0, 0, 0, 0.76);
+  border-radius: 11px;
+  margin: 10px 0px;
+  padding: 10px 30px;
+}
+
+[value="Sign In with Google"], button{
+  background: none;
+  border: 2px solid rgba(0, 0, 0, 0.76);
+  border-radius: 11px;
+  color: black;
+  font-size: larger;
+  width: 23rem;
+  height: 70px;
+  margin: 10px 0px;
+}
+label, input, button{
+  font-family: 'Itim', sans-serif;
+}
+
+label{
+font-size: larger;
+}
+ p {
+   font-family: 'Itim', sans-serif;
+  color: rgba(128, 128, 128);
+}
+ b{
+   color: black;
+ }

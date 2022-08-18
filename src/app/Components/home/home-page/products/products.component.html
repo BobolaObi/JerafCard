@@ -1,0 +1,18 @@
+<body>
+
+<div>
+  <h2>Products </h2>
+  <br>
+
+</div>
+<section id="products">
+  <!-- This will be content from the database -->
+  <span  *ngFor="let items of product | slice:0:3; let i=index ">
+    <img id="item" src="{{items.image}}" alt="product-image">
+    <img  id="shadow" src="{{items.shadow}}" alt="aesthetic">
+     <p>{{items.description}}</p>
+     <a href="{{items.button}}"> ADD TO CART</a>
+  </span>
+</section>
+
+</body>

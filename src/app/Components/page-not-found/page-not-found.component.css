@@ -1,0 +1,18 @@
+h1{
+  font-size: clamp(150px, 2vw, 400px);
+}
+h1, p, h3{
+  color: black;
+  text-align: center;
+}
+p{
+  font-family: "Roboto", sans-serif;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15%;
+  overflow: hidden;
+}

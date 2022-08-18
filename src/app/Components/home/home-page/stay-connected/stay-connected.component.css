@@ -1,0 +1,48 @@
+/*Body Styles*/
+html{
+  background-color: #F5F5F5;
+}
+body{
+  padding: 6vh;
+  background-color: #F5F5F5;
+  margin: auto;
+  overflow: hidden;
+  max-width: 2000px;
+}
+body, div{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+}
+section{
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+}
+
+
+/*Image Styles*/
+img{
+  max-width: 320px;
+}
+
+@media only screen and (max-width: 907px) {
+  body {
+    flex-wrap: wrap;
+margin: 0;
+  }
+section{
+  text-align: center;
+}
+  /*Image Styles*/
+  img{
+    max-width: 220px;
+    padding-bottom: 50px;
+  }
+}
+
+b{
+  color: #8282ef;
+}
