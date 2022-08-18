@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "jerafcard-50782": {
+      "hosting": {
+        "JerafCard": [
+          "jerafcard-50782"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "jerafcard-50782"
+  }
+}

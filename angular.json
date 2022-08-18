@@ -94,6 +94,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "JerafCard:build:production",
+            "firebaseProject": "jerafcard-50782",
+            "firebaseHostingSite": "jerafcard-50782"
+          }
         }
       }
     }
