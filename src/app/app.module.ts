@@ -22,6 +22,8 @@ import { MyOrdersComponent } from './Components/User/my-orders/my-orders.compone
 import { HomePageComponent } from './Components/home/home-page/home-page.component';
 import { LoginComponent } from './Components/User/login/login.component';
 import {  routingComponents } from './app-routing.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {AngularFireModule} from "@angular/fire/compat";
 
 
 @NgModule({
@@ -40,12 +42,14 @@ import {  routingComponents } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
     AppRoutingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
-    provideStorage(() => getStorage())
+    provideStorage(() => getStorage()),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
