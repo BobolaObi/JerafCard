@@ -24,6 +24,7 @@ import { LoginComponent } from './Components/User/login/login.component';
 import {  routingComponents } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {AngularFireModule} from "@angular/fire/compat";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -42,14 +43,17 @@ import {AngularFireModule} from "@angular/fire/compat";
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebase),
+
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase),
+
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
-    NgbModule
+    NgbModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
