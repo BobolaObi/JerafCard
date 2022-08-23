@@ -25,6 +25,7 @@ import {  routingComponents } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {AngularFireModule} from "@angular/fire/compat";
 import {FormsModule} from "@angular/forms";
+import {BsNavbarComponent} from './Components/home/home-page/navigation/bs-navbar/bs-navbar.component';
 
 
 @NgModule({
@@ -36,6 +37,7 @@ import {FormsModule} from "@angular/forms";
     StayConnectedComponent,
     TutorialComponent,
     NavigationComponent,
+    BsNavbarComponent,
     MyOrdersComponent,
     HomePageComponent,
     LoginComponent,
@@ -46,7 +48,6 @@ import {FormsModule} from "@angular/forms";
 
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),

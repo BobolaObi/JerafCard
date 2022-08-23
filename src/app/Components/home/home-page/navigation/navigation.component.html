@@ -1,17 +1,56 @@
-<!--NAVIGATION-->
+<!--&lt;!&ndash;NAVIGATION&ndash;&gt;-->
 
-<nav class="top-nav">
-  <div>
+<!--<nav class="top-nav">-->
+<!--  <div>-->
+<!--    <li><a routerLink=""> <img src="assets/company-logo.png" alt="logo"></a></li>-->
+<!--  </div>-->
+<!--  <input id="menu-toggle" type="checkbox" />-->
+<!--  <label class='menu-button-container' for="menu-toggle">-->
+<!--    <div class='menu-button'></div>-->
+<!--  </label>-->
+<!--  <ul class="menu">-->
+<!--    <li><a routerLink="products">products</a></li>-->
+<!--    <li><a routerLink="cart" >Cart</a></li>-->
+<!--    <li><a id="rounded" routerLink="login">Sign In</a></li>-->
+
+<!--  </ul>-->
+
+<!--</nav>-->
+
+<nav class="navbar">
+  <!-- LOGO -->
+  <div class="logo">
     <li><a routerLink=""> <img src="assets/company-logo.png" alt="logo"></a></li>
   </div>
-  <input id="menu-toggle" type="checkbox" />
-  <label class='menu-button-container' for="menu-toggle">
-    <div class='menu-button'></div>
-  </label>
-  <ul class="menu">
-    <li><a routerLink="products">products</a></li>
-    <li><a routerLink="cart" >Cart</a></li>
-    <li><a id="rounded" routerLink="login">login / Sign UP</a></li>
+  <!-- NAVIGATION MENU -->
+  <ul class="nav-links">
+    <!-- USING CHECKBOX HACK -->
+    <input type="checkbox" id="checkbox_toggle" />
+    <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+    <!-- NAVIGATION MENUS -->
+    <div class="menu">
 
+      <li><a routerLink="products">products</a></li>
+      <li><a routerLink="cart" >Cart</a></li>
+<!--      Base Log in router (if there is no user logged in show this option)-->
+      <li *ngIf="!currentUser" id="rounded">
+        <a  routerLink="login">Sign In</a>
+      </li>
+<!--      When the user is logged in, show this and other options available via dropdown-->
+      <li  class="services"   *ngIf="currentUser">
+        <a >{{currentUser.displayName}}</a>
+        <!-- DROPDOWN MENU -->
+        <ul class="dropdown" >
+          <li><a routerLink="products">products</a></li>
+          <li><a routerLink="cart" >Cart</a></li>
+        <li>  <a class="dropdown-item" routerLink="orders">Manage Orders</a></li>
+       <li>  <a class="dropdown-item" (click)="logout()">Log Out</a></li>
+        </ul>
+      </li>
+
+
+
+    </div>
   </ul>
 </nav>
+

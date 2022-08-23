@@ -8,24 +8,44 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  constructor(private fireauth : AngularFireAuth, private router : Router) { }
+  constructor(private fireauth : AngularFireAuth,
+              private router : Router)
+  {
 
-  // login method
-  login(email : string, password : string) {
-    this.fireauth.signInWithEmailAndPassword(email,password).then( res => {
-        localStorage.setItem('token','true');
+  }
 
-        if(res.user?.emailVerified == true) {
-          this.router.navigate(['dashboard']);
-        } else {
-          this.router.navigate(['/varify-email']);
-        }
+  //sign in with google
+  googleSignIn() {
+    return this.fireauth.signInWithPopup(new GoogleAuthProvider).then(res => {
+
+      this.router.navigate(['/dashboard']);
+      localStorage.setItem('token',JSON.stringify(res.user?.uid));
 
     }, err => {
-        alert(err.message);
-        this.router.navigate(['/login']);
+      alert(err.message);
     })
   }
+
+  // logout
+  logout() {
+    // this.fireauth.auth.signOut();
+  }
+  // // login method
+  // login(email : string, password : string) {
+  //   this.fireauth.signInWithEmailAndPassword(email,password).then( res => {
+  //       localStorage.setItem('token','true');
+  //
+  //       if(res.user?.emailVerified == true) {
+  //         this.router.navigate(['dashboard']);
+  //       } else {
+  //         this.router.navigate(['/varify-email']);
+  //       }
+  //
+  //   }, err => {
+  //       alert(err.message);
+  //       this.router.navigate(['/login']);
+  //   })
+  // }
 
   // // register method
   // register(email : string, password : string) {
@@ -67,18 +87,6 @@ export class AuthService {
   //     alert('Something went wrong. Not able to send mail to your email.')
   //   })
   // }
-
-  //sign in with google
-  googleSignIn() {
-    return this.fireauth.signInWithPopup(new GoogleAuthProvider).then(res => {
-
-      this.router.navigate(['/dashboard']);
-      localStorage.setItem('token',JSON.stringify(res.user?.uid));
-
-    }, err => {
-      alert(err.message);
-    })
-  }
 
 
 }
