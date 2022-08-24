@@ -11,6 +11,12 @@ export class NavigationComponent implements OnInit {
 
   currentUser: firebase.User | any
 
+  navbarOpen = false;
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
+  }
+
+
   constructor(private afAuth: AngularFireAuth) {
     afAuth.authState.subscribe(userName => this.currentUser = userName );
 }

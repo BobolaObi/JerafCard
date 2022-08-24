@@ -25,8 +25,6 @@ import {  routingComponents } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {AngularFireModule} from "@angular/fire/compat";
 import {FormsModule} from "@angular/forms";
-import {BsNavbarComponent} from './Components/home/home-page/navigation/bs-navbar/bs-navbar.component';
-
 
 @NgModule({
   declarations: [
@@ -37,7 +35,7 @@ import {BsNavbarComponent} from './Components/home/home-page/navigation/bs-navba
     StayConnectedComponent,
     TutorialComponent,
     NavigationComponent,
-    BsNavbarComponent,
+
     MyOrdersComponent,
     HomePageComponent,
     LoginComponent,
