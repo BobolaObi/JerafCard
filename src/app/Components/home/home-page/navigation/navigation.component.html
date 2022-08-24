@@ -4,7 +4,7 @@
     <!-- Brand -->
     <a class="navbar-brand" routerLink=""><img src="assets/company-logo.png" alt="logo">    </a>
 
-    <!-- Toggler/collapsibe Button -->
+    <!-- Toggler/collapsible Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#collapsibleNavbar"  aria-controls="#collapsibleNavbar"
             aria-expanded="false" aria-label="Toggle navigation"
@@ -12,9 +12,10 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
+
     <!-- Navbar links -->
-    <div [ngClass]="{ 'show': navbarOpen }" class="collapse navbar-collapse"
-         id="collapsibleNavbar text-right">
+    <div [ngClass]="{ 'show': navbarOpen }" class="collapse navbar-collapse text-right"
+         id="collapsibleNavbar ">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-center" >
               <li class="nav-item"><a  class="nav-link"  routerLink="products">products</a></li>
               <li class="nav-item"><a  class="nav-link"  routerLink="cart" >Cart</a></li>
@@ -24,14 +25,15 @@
         </li>
 
 
-        <li ngbDropdown class="nav-item dropdown"  *ngIf="currentUser">
+        <li id="user-name"ngbDropdown class="nav-item dropdown  "  *ngIf="currentUser">
           <a ngbDropdownToggle class="nav-link dropdown-toggle"  id="navbardrop" data-toggle="dropdown"
              aria-haspopup="true" aria-expanded="false">
-            {{ currentUser.displayName}}
+            <img src="assets/googlelogo.png" alt="Avatar" class="avatar">{{ currentUser.displayName}}
           </a>
 
-          <div ngbDropdownMenu class="dropdown-menu">      {{ currentUser.name}}
-            <a class="dropdown-item" routerLink="myorders">My Orders      {{ currentUser.name}}</a>
+          <div id="user-tools" ngbDropdownMenu class="dropdown-menu">
+            {{ currentUser.name}}
+            <a class="dropdown-item" routerLink="myorders">My Orders </a>
             <a class="dropdown-item" routerLink="/admin/orders">Manage Orders</a>
             <a class="dropdown-item" routerLink="/admin/products">Manage Products</a>
             <a class="dropdown-item" (click)="logout()">Log Out</a>
@@ -40,9 +42,7 @@
       </ul>
     </div>
 
-
   </div>
-
 </nav>
 
 
@@ -50,64 +50,4 @@
 
 
 
-
-
-
-
-<!--&lt;!&ndash;NAVIGATION&ndash;&gt;-->
-
-<!--<nav class="top-nav">-->
-<!--  <div>-->
-<!--    <li><a routerLink=""> <img src="assets/company-logo.png" alt="logo"></a></li>-->
-<!--  </div>-->
-<!--  <input id="menu-toggle" type="checkbox" />-->
-<!--  <label class='menu-button-container' for="menu-toggle">-->
-<!--    <div class='menu-button'></div>-->
-<!--  </label>-->
-<!--  <ul class="menu">-->
-<!--    <li><a routerLink="products">products</a></li>-->
-<!--    <li><a routerLink="cart" >Cart</a></li>-->
-<!--    <li><a id="rounded" routerLink="login">Sign In</a></li>-->
-
-<!--  </ul>-->
-
-<!--</nav>-->
-
-
-<!--<nav class="navbar">-->
-<!--  &lt;!&ndash; LOGO &ndash;&gt;-->
-<!--  <div class="logo">-->
-<!--    <li><a routerLink=""> <img src="assets/company-logo.png" alt="logo"></a></li>-->
-<!--  </div>-->
-<!--  &lt;!&ndash; NAVIGATION MENU &ndash;&gt;-->
-<!--  <ul class="nav-links">-->
-<!--    &lt;!&ndash; USING CHECKBOX HACK &ndash;&gt;-->
-<!--    <input type="checkbox" id="checkbox_toggle" />-->
-<!--    <label for="checkbox_toggle" class="hamburger">&#9776;</label>-->
-<!--    &lt;!&ndash; NAVIGATION MENUS &ndash;&gt;-->
-<!--    <div class="menu">-->
-
-<!--      <li><a routerLink="products">products</a></li>-->
-<!--      <li><a routerLink="cart" >Cart</a></li>-->
-<!--&lt;!&ndash;      Base Log in router (if there is no user logged in show this option)&ndash;&gt;-->
-<!--      <li *ngIf="!currentUser" id="rounded">-->
-<!--        <a  routerLink="login">Sign In</a>-->
-<!--      </li>-->
-<!--&lt;!&ndash;      When the user is logged in, show this and other options available via dropdown&ndash;&gt;-->
-<!--      <li  class="services"   *ngIf="currentUser">-->
-<!--        <a >{{currentUser.displayName}}</a>-->
-<!--        &lt;!&ndash; DROPDOWN MENU &ndash;&gt;-->
-<!--        <ul class="dropdown" >-->
-<!--          <li><a routerLink="products">products</a></li>-->
-<!--          <li><a routerLink="cart" >Cart</a></li>-->
-<!--        <li>  <a class="dropdown-item" routerLink="orders">Manage Orders</a></li>-->
-<!--       <li>  <a class="dropdown-item" (click)="logout()">Log Out</a></li>-->
-<!--        </ul>-->
-<!--      </li>-->
-
-
-
-<!--    </div>-->
-<!--  </ul>-->
-<!--</nav>-->
 
